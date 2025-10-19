@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("logic-analyzer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c36d2304dfd8976b11eb7af75a72220d1a89e6c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fb75494f9fb0483610777625621c33273ba775b")]
 [assembly: System.Reflection.AssemblyProductAttribute("logic-analyzer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("logic-analyzer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
