@@ -1,0 +1,15 @@
+/Users/juhajeon/Documents/logic-analyzer/bin/Release/net9.0/logic-analyzer
+/Users/juhajeon/Documents/logic-analyzer/bin/Release/net9.0/logic-analyzer.deps.json
+/Users/juhajeon/Documents/logic-analyzer/bin/Release/net9.0/logic-analyzer.runtimeconfig.json
+/Users/juhajeon/Documents/logic-analyzer/bin/Release/net9.0/logic-analyzer.dll
+/Users/juhajeon/Documents/logic-analyzer/bin/Release/net9.0/logic-analyzer.pdb
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.AssemblyInfoInputs.cache
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.AssemblyInfo.cs
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.csproj.CoreCompileInputs.cache
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.sourcelink.json
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.dll
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/refint/logic-analyzer.dll
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.pdb
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/logic-analyzer.genruntimeconfig.cache
+/Users/juhajeon/Documents/logic-analyzer/obj/Release/net9.0/ref/logic-analyzer.dll

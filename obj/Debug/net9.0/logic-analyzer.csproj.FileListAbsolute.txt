@@ -12,3 +12,4 @@
 /Users/juhajeon/Documents/logic-analyzer/obj/Debug/net9.0/logic-analyzer.pdb
 /Users/juhajeon/Documents/logic-analyzer/obj/Debug/net9.0/logic-analyzer.genruntimeconfig.cache
 /Users/juhajeon/Documents/logic-analyzer/obj/Debug/net9.0/ref/logic-analyzer.dll
+/Users/juhajeon/Documents/logic-analyzer/obj/Debug/net9.0/logic-analyzer.sourcelink.json
