@@ -3,7 +3,9 @@
 Small, trace‑driven analyzer for NAND logic‑analyzer CSV (event‑based). It decodes
 **commands/addresses**, measures **AC parameters** (`tCMDH`, `tADDH`), and exports compact CSV reports.
 
-## Background
+---
+
+## 🌁 Background
 - A real customer user case showed misbehavior; they requested analysis with probe captures.
 - Internal tool (C#/Python, 2024–present) decodes and flags AC‑timing/order issues, visualizes sequences,
   and exports min/max/avg/std timing stats. It detects PIR misuse and timing hazards, enabling fast reproduction and
@@ -12,28 +14,9 @@ Small, trace‑driven analyzer for NAND logic‑analyzer CSV (event‑based). It
   (Product Engineering Tech Conference).
 - This repo is a **public, minimal** reproduction (no confidential data).
 
-## What it produces
-1. **Complete Commands** — one row only if a command is followed by **six valid addresses**.  
-2. **Filtered (Rejects)** — command/address entries dropped, with reasons.  
-3. **AC Parameter Stats** — stats of **all pin‑detected** `tCMDH`/`tADDH` (F2), no time‑based filtering.  
-4. **AC Detect Log** — **all pin‑detected** command/address windows (F2), stream order (no sorting).
+---
 
-## Input (event‑based CSV)
-Header (fixed):
-```
-Time(ns), IO, nCE0, ALE, CLE, nWE, nRE, RnB, nWP, DQS
-```
-Guidelines: add a row only when pins change. Typical: `nCE0`=0 from 2nd event, `nRE/nWP/DQS`=1.
-- Command window (per WE‑high): **`RnB=0 & CLE=1`** across the whole WE‑high.
-- Address window (per WE‑high): **`RnB=0 & ALE=1`** across the whole WE‑high.
-- Ambiguous (CLE=1 & ALE=1 simultaneously) → reject.
-
-AC definitions (pin‑based only):
-- `tCMDH`: WE rising → first time **CLE** goes 0.  
-- `tADDH`: WE rising → first time **ALE** goes 0.  
-- Thresholds (acceptance only): `tCMDH ≥ 20 ns`, `tADDH ≥ 30 ns` (values below are still recorded in stats/log).
-
-## Quick Start
+## 🔧 Quick Start
 Requirements: **.NET SDK 9.x**
 ```bash
 dotnet build -c Release
@@ -58,7 +41,34 @@ Outputs (to `out/`):
 <input>.ac_params_detect_log.csv
 ```
 
-## Sample Results (illustrative)
+---
+
+## 🧩 Input (event‑based CSV)
+Header (fixed):
+```
+Time(ns), IO, nCE0, ALE, CLE, nWE, nRE, RnB, nWP, DQS
+```
+Guidelines: add a row only when pins change. Typical: `nCE0`=0 from 2nd event, `nRE/nWP/DQS`=1.
+- Command window (per WE‑high): **`RnB=0 & CLE=1`** across the whole WE‑high.
+- Address window (per WE‑high): **`RnB=0 & ALE=1`** across the whole WE‑high.
+- Ambiguous (CLE=1 & ALE=1 simultaneously) → reject.
+
+AC definitions (pin‑based only):
+- `tCMDH`: WE rising → first time **CLE** goes 0.  
+- `tADDH`: WE rising → first time **ALE** goes 0.  
+- Thresholds (acceptance only): `tCMDH ≥ 20 ns`, `tADDH ≥ 30 ns` (values below are still recorded in stats/log).
+
+---
+
+## 📊 Artifacts
+1. **Complete Commands** — one row only if a command is followed by **six valid addresses**.  
+2. **Filtered (Rejects)** — command/address entries dropped, with reasons.  
+3. **AC Parameter Stats** — stats of **all pin‑detected** `tCMDH`/`tADDH` (F2), no time‑based filtering.  
+4. **AC Detect Log** — **all pin‑detected** command/address windows (F2), stream order (no sorting).
+
+---
+
+## 📊 Sample Results
 
 Small, hand‑crafted examples that mirror the actual CSV shapes.
 
@@ -98,10 +108,9 @@ Small, hand‑crafted examples that mirror the actual CSV shapes.
 | 235  | Address | Address |  A2  |  25.00  |           180 | Program       |
 | 260  | Address | Address |  A3  |  30.00  |           180 | Program       |
 
-## Notes
+---
+
+## 📒Notes
 - Command naming: `0x30→Erase`, `0x20→Program`, `0x10→Read`, `0x00→Reset`, others→`Unknown`.
 - No sorting: files preserve input stream order for forensic review.
 - Educational/demo scope; do not include customer‑identifying data.
-
-## License
-Provided for research, teaching, and demonstration.
